@@ -14,8 +14,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-      Home
+    <div className="flex gap-2">
+      Hi {user.displayName ?? user.email}
       <Logout />
     </div>
   );
