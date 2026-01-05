@@ -124,3 +124,70 @@
     @apply bg-background text-foreground;
   }
 }
+
+#hero-svg-map {
+  fill: var(--background);
+}
+
+#path1 {
+  stroke-dasharray: 20 100%;
+  stroke-dashoffset: -20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: run 3s linear infinite;
+  stroke: var(--chart-3);
+}
+
+#path11 {
+  stroke: var(--chart-2);
+}
+
+#path22 {
+  stroke: var(--color-destructive);
+}
+
+#path2 {
+  stroke-dasharray: 7 100%;
+  stroke-dashoffset: -10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: run 3s linear infinite;
+  animation-delay: 2s;
+  stroke: var(--destructive);
+}
+
+@keyframes run {
+  to {
+  stroke-dashoffset: 100%;
+  }
+}
+
+#path2-pulse {
+  stroke-dasharray: 7 100%;
+  stroke-dashoffset: -10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: move-dot 3s linear infinite;
+  animation-delay: 2s;
+  stroke: #ff000059;
+}
+
+@keyframes move-dot {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 100%;
+    opacity: 0;
+  }
+}
