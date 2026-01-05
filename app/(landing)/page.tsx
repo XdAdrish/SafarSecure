@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import HeroMapVec from "@/components/ui/svg/HeroMapVec";
+import HeroMapVec from "@/components/svg/HeroMapVec";
 import Navbar from "@/components/navbar";
 import {
   IconShieldCheck,
