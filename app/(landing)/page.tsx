@@ -61,7 +61,7 @@ const Page = () => {
           },
         ].map((feature, index) => (
           <div
-            key={index}
+            key={feature.title}
             className="flex flex-col gap-6 justify-between  p-10 text-card-foreground border-e border-foreground/20 min-h-100"
           >
             <div>
