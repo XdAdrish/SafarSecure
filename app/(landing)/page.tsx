@@ -22,7 +22,7 @@ const Page = () => {
           <div className="flex flex-col gap-2 justify-start text-left">
             <h1 className="text-7xl font-bold">Safe Secure</h1>
             <p className="text-6xl font-bold text-foreground/50">
-              Travle Safe, Stay Secure
+              Travel Safe, Stay Secure
             </p>
             <div className="flex gap-2 mt-5">
               <Link href="/signup">
