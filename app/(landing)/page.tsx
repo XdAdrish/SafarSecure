@@ -100,9 +100,9 @@ const Page = () => {
           <div className="flex flex-col gap-4">
             <h1 className="text-2xl font-bold">Safe Secure</h1>
             <div className="flex gap-4 text-foreground/70">
-              <IconBrandGithub className="size-5 cursor-pointer hover:text-foreground transition-colors" />
-              <IconBrandLinkedin className="size-5 cursor-pointer hover:text-foreground transition-colors" />
-              <IconBrandTwitter className="size-5 cursor-pointer hover:text-foreground transition-colors" />
+              <IconBrandGithub className="size-5 hover:text-foreground transition-colors" />
+              <IconBrandLinkedin className="size-5 hover:text-foreground transition-colors" />
+              <IconBrandTwitter className="size-5 hover:text-foreground transition-colors" />
             </div>
           </div>
           <div className="flex flex-col gap-4">
