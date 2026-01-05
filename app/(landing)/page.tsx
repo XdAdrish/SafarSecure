@@ -10,7 +10,6 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconArrowUpRight,
-  IconMoon,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -66,10 +65,12 @@ const Page = () => {
             className="flex flex-col gap-6 justify-between  p-10 text-card-foreground border-e border-foreground/20 min-h-100"
           >
             <div>
-              <h3 className="text-xl font-bold mb-2 flex items-center gap-4">
+              <h3 className="text-xl font-bold mb-2 flex items-center gap-3">
                 <span className="size-6">{feature.icon}</span> {feature.title}
               </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <p className="text-foreground/40 font-medium">
+                {feature.description}
+              </p>
             </div>
             <div className="size-50 text-primary w-full flex justify-center">
               {feature.icon}

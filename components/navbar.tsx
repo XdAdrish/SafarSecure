@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const Navbar = () => {
   const navlist = [
@@ -22,7 +23,8 @@ const Navbar = () => {
               <Link href={item.href}>{item.name}</Link>
             </li>
           ))}
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
+            <ModeToggle />
             <Button size={"sm"} variant={"outline"}>
               Admin Login
             </Button>
