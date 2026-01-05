@@ -25,6 +25,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { googleAuthProvider } from "./auth-provider";
 
 const loginSchema = z.object({
   email: z.string().email("Please provide a valid email"),
@@ -42,7 +45,26 @@ export const LoginForm = () => {
     },
   });
 
-  const onSubmit = async (values: LoginFormValues) => {};
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleAuthProvider);
+      toast.success("Login successful");
+      router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed");
+    }
+  };
+  const onSubmit = async (values: LoginFormValues) => {
+    try {
+      await signInWithEmailAndPassword(auth, values.email, values.password);
+      toast.success("Login successful");
+      router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed");
+    }
+  };
 
   const isPending = form.formState.isSubmitting;
 
@@ -71,6 +93,7 @@ export const LoginForm = () => {
                     variant={"outline"}
                     disabled={isPending}
                     className="w-full"
+                    onClick={signInWithGoogle}
                   >
                     Continue with Google
                   </Button>

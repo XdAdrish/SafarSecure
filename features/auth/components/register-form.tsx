@@ -27,6 +27,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { googleAuthProvider } from "./auth-provider";
 
 const registerSchema = z
   .object({
@@ -50,9 +53,25 @@ export const RegisterForm = () => {
       confirmPassword: "",
     },
   });
-
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleAuthProvider);
+      toast.success("Login successful");
+      router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed");
+    }
+  };
   const onSubmit = async (values: RegisterFormValues) => {
-    console.log(values);
+    try {
+      await createUserWithEmailAndPassword(auth, values.email, values.password);
+      toast.success("Register successful");
+      router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("Register failed");
+    }
   };
 
   const isPending = form.formState.isSubmitting;
@@ -82,6 +101,7 @@ export const RegisterForm = () => {
                     variant={"outline"}
                     disabled={isPending}
                     className="w-full"
+                    onClick={signInWithGoogle}
                   >
                     Continue with Google
                   </Button>
